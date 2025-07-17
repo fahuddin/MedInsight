@@ -1,0 +1,501 @@
+patient_id,age,gender,blood_pressure,cholesterol,glucose_level,heart_rate,bmi,smoker,num_visits_last_year,readmission,clinical_notes
+1,69,Female,119.0,212.0,106.5,76.8,29.2,No,2,0,Patient shows signs of improvement.
+2,32,Female,101.8,219.4,97.0,77.1,23.3,Yes,1,0,Follow-up required due to high cholesterol levels.
+3,89,Male,110.2,185.5,90.7,82.6,25.3,No,0,0,Patient shows signs of improvement.
+4,78,Male,120.7,247.2,68.1,99.6,25.8,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+5,38,Male,107.1,163.2,110.3,75.9,30.9,No,3,0,Patient reports shortness of breath and fatigue.
+6,41,Female,114.2,156.1,89.3,66.9,30.7,No,4,1,"Elevated BP noted, recommended lifestyle changes."
+7,20,Female,135.1,206.7,76.6,71.7,22.0,Yes,2,0,Patient reports shortness of breath and fatigue.
+8,39,Male,111.3,231.4,42.6,54.3,27.2,Yes,3,0,"No signs of infection, patient stable."
+9,70,Male,132.5,250.5,99.4,65.1,24.2,No,6,0,Patient shows signs of improvement.
+10,19,Female,103.1,186.2,135.4,67.9,22.0,No,2,0,"No signs of infection, patient stable."
+11,47,Female,127.9,232.4,133.2,66.8,26.1,Yes,2,1,"No signs of infection, patient stable."
+12,55,Male,141.6,198.8,90.9,73.5,25.8,Yes,2,0,Patient reports shortness of breath and fatigue.
+13,19,Male,82.9,194.8,88.0,63.8,36.7,No,4,1,"Elevated BP noted, recommended lifestyle changes."
+14,81,Female,108.0,226.5,109.4,83.2,28.7,No,1,0,Follow-up required due to high cholesterol levels.
+15,77,Male,128.7,219.6,80.0,72.0,21.5,Yes,4,0,Patient reports shortness of breath and fatigue.
+16,38,Male,117.0,152.7,106.0,71.9,24.7,Yes,3,1,Follow-up required due to high cholesterol levels.
+17,50,Male,125.6,244.3,115.3,68.7,31.1,Yes,3,0,"No signs of infection, patient stable."
+18,75,Female,110.9,241.4,124.5,73.6,35.4,Yes,5,0,Follow-up required due to high cholesterol levels.
+19,39,Female,121.3,181.2,98.0,80.3,20.7,Yes,3,0,"Elevated BP noted, recommended lifestyle changes."
+20,66,Female,117.7,211.9,95.9,63.3,19.5,Yes,1,1,Patient reports shortness of breath and fatigue.
+21,76,Female,137.5,214.8,82.4,65.4,34.5,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+22,59,Female,123.8,207.8,83.5,69.0,28.6,Yes,3,1,"Elevated BP noted, recommended lifestyle changes."
+23,77,Female,125.1,183.5,95.5,58.5,23.5,Yes,5,0,Patient reports shortness of breath and fatigue.
+24,32,Female,113.8,179.9,107.3,63.8,29.1,Yes,4,1,"Elevated BP noted, recommended lifestyle changes."
+25,79,Male,112.7,199.2,118.3,67.2,16.5,Yes,2,0,Patient shows signs of improvement.
+26,79,Male,113.5,235.2,83.9,80.7,27.0,No,7,1,Patient shows signs of improvement.
+27,64,Male,125.9,216.3,129.9,74.6,28.3,No,0,0,Patient shows signs of improvement.
+28,79,Male,113.7,188.9,94.6,73.9,30.7,Yes,4,1,Follow-up required due to high cholesterol levels.
+29,68,Male,124.3,223.2,99.6,80.5,22.9,No,2,0,"Elevated BP noted, recommended lifestyle changes."
+30,72,Male,151.1,114.5,85.1,70.6,27.3,No,3,0,Patient reports shortness of breath and fatigue.
+31,81,Male,133.1,234.5,51.5,75.9,23.3,No,1,0,Patient reports shortness of breath and fatigue.
+32,20,Female,115.1,147.8,117.7,71.0,28.0,No,3,0,Follow-up required due to high cholesterol levels.
+33,68,Female,138.0,189.1,114.7,74.7,23.4,No,1,0,Patient reports shortness of breath and fatigue.
+34,24,Male,113.9,166.4,94.4,66.2,25.4,No,3,1,Patient shows signs of improvement.
+35,38,Male,89.4,161.2,101.3,47.6,23.0,Yes,6,1,"Elevated BP noted, recommended lifestyle changes."
+36,56,Female,104.9,234.8,110.3,70.7,29.6,Yes,3,0,Patient reports shortness of breath and fatigue.
+37,35,Male,91.9,186.0,68.7,86.2,30.4,Yes,2,1,Patient reports shortness of breath and fatigue.
+38,21,Male,114.7,210.4,89.4,81.3,26.1,Yes,1,0,"No signs of infection, patient stable."
+39,77,Female,120.3,198.6,115.9,81.7,27.2,Yes,4,0,"No signs of infection, patient stable."
+40,31,Male,145.1,214.3,74.9,84.4,21.2,No,4,1,"No signs of infection, patient stable."
+41,26,Female,124.9,202.3,105.9,72.9,25.8,Yes,3,0,"Elevated BP noted, recommended lifestyle changes."
+42,70,Male,116.7,161.5,72.9,74.0,26.8,Yes,1,1,Patient shows signs of improvement.
+43,19,Female,132.4,229.9,109.3,65.8,37.5,No,4,0,Patient shows signs of improvement.
+44,77,Female,86.8,185.2,99.3,68.8,22.6,No,2,0,Patient shows signs of improvement.
+45,88,Female,123.5,153.3,67.7,78.2,32.9,Yes,4,0,"Elevated BP noted, recommended lifestyle changes."
+46,61,Male,131.6,187.2,123.3,84.0,31.0,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+47,25,Female,97.8,245.0,85.3,70.6,28.1,No,5,0,"No signs of infection, patient stable."
+48,64,Male,137.2,225.5,83.8,67.5,34.0,No,3,1,Patient reports shortness of breath and fatigue.
+49,52,Male,125.1,189.5,104.0,72.0,28.5,No,1,1,Follow-up required due to high cholesterol levels.
+50,53,Male,113.8,189.5,123.0,78.0,28.6,Yes,2,1,Follow-up required due to high cholesterol levels.
+51,67,Male,129.5,190.4,79.7,57.6,26.8,No,1,0,Patient reports shortness of breath and fatigue.
+52,21,Female,154.1,262.3,101.2,49.0,31.9,Yes,5,0,"No signs of infection, patient stable."
+53,19,Female,122.7,211.5,108.6,66.5,31.4,Yes,1,0,Patient reports shortness of breath and fatigue.
+54,23,Male,123.7,212.9,113.9,59.8,24.5,No,3,0,Patient reports shortness of breath and fatigue.
+55,71,Male,113.1,230.9,103.5,66.9,21.7,No,2,0,Follow-up required due to high cholesterol levels.
+56,21,Female,107.3,207.2,92.7,70.5,26.2,No,3,1,"No signs of infection, patient stable."
+57,71,Male,132.5,192.2,83.4,67.5,23.8,Yes,2,0,"Elevated BP noted, recommended lifestyle changes."
+58,80,Female,107.2,194.1,101.7,86.5,26.7,No,5,0,Follow-up required due to high cholesterol levels.
+59,35,Male,121.1,197.9,78.6,75.3,31.9,No,4,0,"Elevated BP noted, recommended lifestyle changes."
+60,61,Male,112.8,198.9,41.6,75.0,25.2,No,5,0,"No signs of infection, patient stable."
+61,51,Female,127.2,221.8,108.7,78.2,26.8,No,2,0,Patient reports shortness of breath and fatigue.
+62,79,Male,125.0,201.6,118.1,60.6,27.2,No,3,1,Patient shows signs of improvement.
+63,31,Female,135.6,222.0,52.7,82.4,30.4,Yes,2,0,Patient shows signs of improvement.
+64,65,Male,112.3,197.6,79.8,71.2,18.0,No,1,1,"No signs of infection, patient stable."
+65,32,Male,116.0,202.4,112.4,78.7,24.6,No,3,0,Patient shows signs of improvement.
+66,89,Male,105.3,140.1,141.1,61.3,27.8,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+67,79,Female,113.3,227.5,100.4,56.5,31.8,Yes,7,0,Patient shows signs of improvement.
+68,57,Male,125.7,210.4,85.4,80.2,25.0,No,6,1,"No signs of infection, patient stable."
+69,70,Male,131.4,229.9,96.3,75.8,19.5,Yes,3,1,"No signs of infection, patient stable."
+70,41,Male,106.2,113.1,127.5,63.0,29.5,Yes,4,0,"Elevated BP noted, recommended lifestyle changes."
+71,43,Male,133.0,262.7,87.1,63.3,24.5,No,1,0,Patient shows signs of improvement.
+72,77,Female,140.3,195.8,84.0,83.3,22.2,No,1,0,Patient shows signs of improvement.
+73,58,Female,126.2,233.2,90.3,60.1,24.5,No,2,0,Patient reports shortness of breath and fatigue.
+74,46,Male,148.2,168.8,80.9,88.4,26.3,Yes,3,1,Follow-up required due to high cholesterol levels.
+75,32,Female,108.4,218.4,102.5,63.0,24.6,Yes,3,0,"No signs of infection, patient stable."
+76,62,Male,101.3,168.4,132.5,78.4,18.2,Yes,1,0,Patient reports shortness of breath and fatigue.
+77,82,Male,93.3,181.3,106.5,68.7,30.6,Yes,4,0,"No signs of infection, patient stable."
+78,88,Male,142.4,257.4,95.0,78.0,32.1,Yes,1,0,Patient reports shortness of breath and fatigue.
+79,26,Female,129.8,194.3,94.2,66.6,29.6,Yes,3,0,Follow-up required due to high cholesterol levels.
+80,18,Female,119.2,206.5,68.7,70.4,22.4,No,3,0,Patient reports shortness of breath and fatigue.
+81,25,Female,124.2,226.1,117.7,72.4,26.2,No,1,1,"No signs of infection, patient stable."
+82,80,Female,103.1,214.9,98.4,62.0,27.0,Yes,2,1,Patient shows signs of improvement.
+83,28,Female,156.7,204.5,96.4,79.4,29.4,No,4,0,"No signs of infection, patient stable."
+84,25,Female,121.9,210.9,163.9,66.9,29.7,No,2,1,"Elevated BP noted, recommended lifestyle changes."
+85,52,Female,121.6,272.1,106.0,69.7,24.1,Yes,0,0,"Elevated BP noted, recommended lifestyle changes."
+86,52,Female,130.9,198.3,85.0,62.1,27.3,Yes,4,0,"Elevated BP noted, recommended lifestyle changes."
+87,50,Female,127.2,206.0,91.5,46.4,28.8,No,0,0,"Elevated BP noted, recommended lifestyle changes."
+88,22,Male,123.4,231.5,123.0,70.1,32.8,Yes,2,0,Follow-up required due to high cholesterol levels.
+89,58,Female,108.1,233.2,102.3,96.1,29.8,Yes,5,0,Patient shows signs of improvement.
+90,45,Female,127.1,235.6,71.2,79.8,30.2,No,1,0,Patient shows signs of improvement.
+91,24,Female,148.2,219.2,118.4,71.8,27.3,Yes,5,0,"No signs of infection, patient stable."
+92,89,Female,140.2,165.7,86.6,69.4,32.6,No,4,1,Patient reports shortness of breath and fatigue.
+93,29,Female,143.9,249.0,137.5,72.2,28.6,No,4,0,"No signs of infection, patient stable."
+94,51,Female,112.3,165.6,121.6,77.5,23.6,No,3,0,"No signs of infection, patient stable."
+95,50,Female,105.2,209.1,91.1,60.2,32.6,No,6,0,"No signs of infection, patient stable."
+96,65,Female,118.1,177.4,125.6,83.1,29.8,No,2,0,"No signs of infection, patient stable."
+97,40,Female,120.8,198.1,101.4,79.2,25.2,Yes,4,0,Patient shows signs of improvement.
+98,79,Female,136.4,209.9,117.1,79.2,25.1,Yes,2,1,Patient reports shortness of breath and fatigue.
+99,54,Female,94.6,209.6,109.7,76.4,28.2,Yes,5,0,"No signs of infection, patient stable."
+100,61,Male,142.9,212.7,83.1,72.2,28.9,Yes,3,0,Patient shows signs of improvement.
+101,52,Male,117.6,248.4,87.1,78.7,27.8,No,3,0,"No signs of infection, patient stable."
+102,82,Female,113.6,213.6,120.6,77.9,28.2,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+103,64,Female,104.8,192.7,93.3,68.5,33.8,Yes,1,0,"No signs of infection, patient stable."
+104,20,Male,95.2,228.9,91.9,66.3,31.3,No,3,0,"No signs of infection, patient stable."
+105,18,Female,132.3,235.7,80.9,73.0,27.8,Yes,6,0,Follow-up required due to high cholesterol levels.
+106,22,Male,121.1,163.2,108.5,87.5,30.8,Yes,3,0,"Elevated BP noted, recommended lifestyle changes."
+107,31,Male,100.7,217.9,141.3,59.6,22.9,Yes,1,0,Patient reports shortness of breath and fatigue.
+108,44,Male,100.6,221.0,78.6,57.3,28.6,No,3,1,"No signs of infection, patient stable."
+109,26,Male,115.0,191.1,100.5,73.6,34.2,No,3,0,Patient reports shortness of breath and fatigue.
+110,32,Male,145.0,241.3,128.2,72.5,26.1,No,2,1,"Elevated BP noted, recommended lifestyle changes."
+111,59,Female,116.1,195.5,98.4,73.7,23.6,No,3,1,"No signs of infection, patient stable."
+112,68,Male,97.5,203.8,109.0,74.4,24.4,Yes,0,0,Follow-up required due to high cholesterol levels.
+113,80,Female,116.3,194.8,78.8,69.8,22.6,No,8,0,Patient shows signs of improvement.
+114,69,Female,115.9,200.5,108.6,86.9,23.9,No,1,0,Follow-up required due to high cholesterol levels.
+115,21,Male,79.5,167.1,96.3,56.0,25.5,No,1,0,Follow-up required due to high cholesterol levels.
+116,40,Male,119.2,156.8,119.7,63.7,21.4,Yes,3,0,Patient shows signs of improvement.
+117,32,Female,116.5,247.8,123.7,71.0,27.1,Yes,2,1,Patient shows signs of improvement.
+118,60,Male,130.4,174.6,151.8,55.6,30.6,No,2,1,Patient shows signs of improvement.
+119,46,Male,147.7,170.3,111.6,70.2,23.4,No,3,0,"No signs of infection, patient stable."
+120,53,Female,136.9,135.4,106.5,88.6,33.1,No,4,0,Patient reports shortness of breath and fatigue.
+121,30,Female,116.0,180.8,103.9,72.2,29.0,No,3,0,Patient reports shortness of breath and fatigue.
+122,49,Male,103.4,160.3,92.9,74.3,31.1,Yes,7,1,Patient shows signs of improvement.
+123,88,Female,158.6,249.3,106.8,59.4,24.4,No,3,0,Follow-up required due to high cholesterol levels.
+124,76,Male,120.9,230.3,94.1,65.8,30.4,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+125,45,Male,120.2,179.4,103.4,68.2,22.6,No,3,1,Patient shows signs of improvement.
+126,83,Male,119.6,267.6,126.4,68.8,30.6,Yes,5,0,Follow-up required due to high cholesterol levels.
+127,59,Female,123.0,229.5,79.9,84.8,27.7,Yes,5,1,Follow-up required due to high cholesterol levels.
+128,62,Female,117.8,190.3,122.8,77.6,29.2,No,4,0,"No signs of infection, patient stable."
+129,79,Female,111.4,125.0,126.3,60.9,22.3,No,4,0,"No signs of infection, patient stable."
+130,74,Female,111.8,268.7,97.6,74.5,23.4,No,2,1,Patient reports shortness of breath and fatigue.
+131,23,Female,119.5,158.3,57.6,77.0,29.4,No,6,0,Patient reports shortness of breath and fatigue.
+132,45,Male,111.8,150.6,87.8,83.4,23.2,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+133,45,Male,109.3,230.7,125.9,87.8,28.9,Yes,2,0,"Elevated BP noted, recommended lifestyle changes."
+134,61,Male,121.6,273.2,99.5,61.8,21.5,Yes,6,0,"Elevated BP noted, recommended lifestyle changes."
+135,47,Male,116.2,241.5,80.0,63.9,30.4,Yes,4,0,"Elevated BP noted, recommended lifestyle changes."
+136,79,Female,142.6,216.9,89.9,59.4,22.1,No,3,0,Follow-up required due to high cholesterol levels.
+137,79,Male,80.2,217.8,116.8,69.7,29.2,Yes,3,0,Follow-up required due to high cholesterol levels.
+138,18,Female,136.4,225.6,110.9,76.7,29.5,Yes,6,0,Patient reports shortness of breath and fatigue.
+139,44,Male,138.7,222.8,95.2,81.9,24.2,Yes,4,1,"No signs of infection, patient stable."
+140,79,Female,88.9,208.4,92.7,71.2,29.3,No,2,1,"No signs of infection, patient stable."
+141,20,Female,114.9,203.1,92.2,68.8,28.0,No,1,0,Patient shows signs of improvement.
+142,87,Male,114.4,198.1,81.6,73.5,24.8,Yes,3,0,Follow-up required due to high cholesterol levels.
+143,89,Male,98.9,177.4,132.3,63.6,23.0,No,4,0,"Elevated BP noted, recommended lifestyle changes."
+144,44,Male,108.3,191.6,93.6,92.9,19.1,Yes,5,0,"Elevated BP noted, recommended lifestyle changes."
+145,26,Male,103.3,149.2,124.3,55.9,28.4,Yes,6,1,Patient shows signs of improvement.
+146,79,Female,146.3,197.0,130.4,73.8,20.7,Yes,2,1,"No signs of infection, patient stable."
+147,54,Male,134.0,170.3,120.0,92.2,27.4,Yes,4,0,"Elevated BP noted, recommended lifestyle changes."
+148,68,Male,139.1,166.9,91.4,72.1,25.9,No,4,0,"No signs of infection, patient stable."
+149,61,Female,130.8,205.4,108.1,70.1,29.7,No,0,0,Patient shows signs of improvement.
+150,41,Male,103.1,241.8,99.5,68.4,25.8,No,4,0,"No signs of infection, patient stable."
+151,76,Male,112.1,227.5,81.9,70.2,25.7,No,5,0,"No signs of infection, patient stable."
+152,49,Male,127.3,152.9,106.5,85.7,29.9,Yes,2,1,"No signs of infection, patient stable."
+153,69,Male,101.7,170.3,76.4,49.9,28.3,No,5,1,"Elevated BP noted, recommended lifestyle changes."
+154,79,Male,130.7,228.2,123.8,87.3,28.3,Yes,4,0,Patient reports shortness of breath and fatigue.
+155,75,Female,116.4,170.5,90.7,57.8,28.9,No,5,0,Follow-up required due to high cholesterol levels.
+156,69,Male,114.4,193.3,104.0,69.3,20.9,No,2,1,"No signs of infection, patient stable."
+157,29,Male,130.7,216.5,105.7,67.7,30.0,No,2,0,"No signs of infection, patient stable."
+158,56,Male,126.7,170.9,94.8,77.9,29.4,Yes,0,0,"No signs of infection, patient stable."
+159,19,Male,114.6,203.2,111.7,56.0,22.9,Yes,4,0,Patient reports shortness of breath and fatigue.
+160,20,Male,137.4,160.0,90.5,76.6,26.0,Yes,1,1,Patient shows signs of improvement.
+161,73,Female,103.8,182.0,117.4,92.2,26.8,Yes,2,0,"Elevated BP noted, recommended lifestyle changes."
+162,76,Male,129.2,209.6,73.1,58.4,26.5,No,3,0,Patient reports shortness of breath and fatigue.
+163,19,Female,128.9,152.2,102.5,73.9,28.3,Yes,2,1,"No signs of infection, patient stable."
+164,19,Female,115.4,213.2,138.8,65.4,32.7,Yes,2,1,Patient reports shortness of breath and fatigue.
+165,71,Male,124.9,199.4,80.0,76.3,31.3,No,1,1,Patient reports shortness of breath and fatigue.
+166,18,Male,101.2,216.6,86.4,72.2,21.8,No,3,0,Patient reports shortness of breath and fatigue.
+167,36,Male,133.9,206.7,110.3,65.6,29.5,Yes,4,0,Patient shows signs of improvement.
+168,19,Male,117.2,240.9,103.6,76.9,32.3,No,6,1,Follow-up required due to high cholesterol levels.
+169,70,Female,112.2,203.8,107.0,90.0,28.5,Yes,3,1,"Elevated BP noted, recommended lifestyle changes."
+170,61,Male,135.7,187.1,109.8,70.1,31.4,No,2,0,Patient shows signs of improvement.
+171,49,Male,109.4,203.7,112.7,79.2,35.0,Yes,3,0,Patient shows signs of improvement.
+172,87,Male,98.9,216.3,122.2,59.1,31.1,Yes,1,1,Follow-up required due to high cholesterol levels.
+173,49,Male,96.7,201.5,108.2,62.4,28.0,Yes,2,1,Patient shows signs of improvement.
+174,85,Male,129.1,201.2,95.2,76.7,31.2,Yes,1,0,Patient reports shortness of breath and fatigue.
+175,72,Male,100.8,178.9,113.5,86.8,27.6,Yes,3,0,Patient reports shortness of breath and fatigue.
+176,73,Female,146.3,180.1,138.0,75.6,27.1,No,4,0,"No signs of infection, patient stable."
+177,34,Female,88.8,157.9,97.3,68.9,25.6,Yes,2,0,Patient shows signs of improvement.
+178,55,Male,145.4,252.5,80.5,72.0,33.3,Yes,2,0,"No signs of infection, patient stable."
+179,41,Male,123.2,162.7,122.1,59.5,23.7,Yes,3,0,"Elevated BP noted, recommended lifestyle changes."
+180,86,Male,118.5,179.2,97.6,78.0,33.1,Yes,2,0,Patient reports shortness of breath and fatigue.
+181,87,Female,111.8,178.4,56.5,80.8,29.0,Yes,2,0,"Elevated BP noted, recommended lifestyle changes."
+182,28,Male,126.0,226.8,116.9,67.5,21.4,No,3,0,Follow-up required due to high cholesterol levels.
+183,33,Female,119.4,191.2,89.3,67.3,28.5,No,1,1,Patient reports shortness of breath and fatigue.
+184,76,Male,136.5,237.4,98.2,74.7,18.6,Yes,6,0,"Elevated BP noted, recommended lifestyle changes."
+185,87,Male,121.7,179.8,106.6,67.6,29.5,No,2,0,Follow-up required due to high cholesterol levels.
+186,20,Male,122.3,208.4,103.8,71.3,30.5,Yes,2,1,"Elevated BP noted, recommended lifestyle changes."
+187,37,Male,114.5,174.9,114.2,93.0,24.6,No,2,0,Follow-up required due to high cholesterol levels.
+188,76,Female,119.1,264.4,91.3,69.5,27.5,No,4,1,Follow-up required due to high cholesterol levels.
+189,53,Female,124.6,164.4,110.3,68.4,34.8,Yes,1,1,Patient reports shortness of breath and fatigue.
+190,36,Male,94.3,209.3,94.8,65.5,25.0,No,2,0,"No signs of infection, patient stable."
+191,84,Male,99.8,219.0,114.8,79.4,22.8,No,4,1,Follow-up required due to high cholesterol levels.
+192,36,Female,131.1,212.4,112.3,70.2,32.9,Yes,3,0,Follow-up required due to high cholesterol levels.
+193,37,Female,122.6,194.4,81.3,65.5,34.9,Yes,3,0,Patient reports shortness of breath and fatigue.
+194,88,Female,117.2,196.1,121.7,85.2,27.0,No,3,0,"No signs of infection, patient stable."
+195,69,Female,120.3,201.3,89.3,86.2,31.0,No,6,0,Patient shows signs of improvement.
+196,50,Male,125.2,195.6,116.2,66.0,32.4,No,3,1,Patient shows signs of improvement.
+197,57,Female,111.9,228.9,107.3,53.3,24.0,Yes,3,0,"No signs of infection, patient stable."
+198,56,Male,108.3,266.3,136.8,82.1,25.1,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+199,18,Female,122.9,183.3,95.5,65.2,31.9,No,2,0,Patient reports shortness of breath and fatigue.
+200,28,Female,105.3,158.9,93.0,79.9,33.7,No,4,0,"No signs of infection, patient stable."
+201,74,Female,126.1,197.4,99.6,52.3,29.3,Yes,3,0,Patient shows signs of improvement.
+202,67,Female,94.5,277.4,93.9,80.9,23.5,Yes,3,0,Follow-up required due to high cholesterol levels.
+203,40,Female,135.4,175.9,116.0,59.9,34.9,Yes,2,1,Patient shows signs of improvement.
+204,48,Male,127.1,249.2,67.7,79.3,24.9,Yes,3,0,Follow-up required due to high cholesterol levels.
+205,59,Male,123.8,250.3,78.9,72.1,25.7,No,1,1,Patient reports shortness of breath and fatigue.
+206,24,Female,134.7,183.4,78.6,62.5,28.4,Yes,2,0,Follow-up required due to high cholesterol levels.
+207,33,Female,145.0,217.1,119.0,67.9,33.2,No,2,1,"No signs of infection, patient stable."
+208,77,Male,135.2,248.9,134.2,78.9,30.4,No,3,1,Follow-up required due to high cholesterol levels.
+209,19,Female,92.4,188.6,97.9,73.1,28.7,No,5,0,"Elevated BP noted, recommended lifestyle changes."
+210,18,Female,100.8,193.9,96.6,77.8,28.9,No,3,0,"No signs of infection, patient stable."
+211,65,Male,110.6,182.5,101.4,91.8,27.2,Yes,6,1,Patient reports shortness of breath and fatigue.
+212,29,Female,120.4,169.6,123.2,56.4,29.2,Yes,2,0,"No signs of infection, patient stable."
+213,86,Female,127.8,180.5,81.5,88.2,16.9,Yes,5,1,"Elevated BP noted, recommended lifestyle changes."
+214,54,Male,109.1,163.3,104.8,73.0,25.8,Yes,6,0,Patient reports shortness of breath and fatigue.
+215,49,Male,122.8,201.0,119.5,63.0,28.0,Yes,6,0,Patient shows signs of improvement.
+216,26,Male,108.7,176.9,110.0,58.7,22.4,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+217,36,Female,110.8,207.0,103.8,70.1,28.5,Yes,4,1,Patient reports shortness of breath and fatigue.
+218,65,Male,98.9,153.3,120.0,81.2,26.2,Yes,3,0,Follow-up required due to high cholesterol levels.
+219,20,Male,106.2,209.9,45.9,70.7,34.0,Yes,2,1,"No signs of infection, patient stable."
+220,37,Male,99.7,225.0,113.6,87.1,33.3,Yes,5,1,Patient reports shortness of breath and fatigue.
+221,41,Male,105.4,140.2,86.9,57.5,25.1,No,4,0,"No signs of infection, patient stable."
+222,71,Male,135.8,211.2,63.4,71.9,26.4,No,2,0,Follow-up required due to high cholesterol levels.
+223,50,Male,105.8,236.8,110.2,59.5,26.7,No,0,1,Patient reports shortness of breath and fatigue.
+224,41,Female,159.5,163.7,127.5,75.6,25.2,No,0,0,Patient shows signs of improvement.
+225,89,Female,127.4,250.2,97.3,80.9,27.8,No,5,1,"Elevated BP noted, recommended lifestyle changes."
+226,53,Male,122.8,212.6,119.1,67.8,24.0,Yes,6,0,Patient reports shortness of breath and fatigue.
+227,55,Male,107.1,178.8,132.2,46.0,22.5,No,1,0,Follow-up required due to high cholesterol levels.
+228,42,Male,130.5,198.3,126.3,74.0,29.5,No,2,1,Patient reports shortness of breath and fatigue.
+229,35,Female,111.4,216.7,132.8,76.4,29.5,No,5,0,"No signs of infection, patient stable."
+230,83,Female,121.8,202.3,114.8,76.0,23.8,Yes,4,0,Patient reports shortness of breath and fatigue.
+231,71,Female,158.4,216.2,101.5,84.4,30.6,Yes,3,0,Patient shows signs of improvement.
+232,52,Female,118.6,172.4,68.0,61.3,24.5,No,2,0,Patient reports shortness of breath and fatigue.
+233,78,Female,137.2,205.1,95.1,78.8,28.0,Yes,0,0,"Elevated BP noted, recommended lifestyle changes."
+234,58,Female,109.5,157.6,83.1,83.9,30.3,Yes,4,1,Patient reports shortness of breath and fatigue.
+235,50,Female,119.5,196.7,143.4,54.2,26.9,No,5,0,"No signs of infection, patient stable."
+236,85,Female,146.6,172.9,96.5,75.2,28.8,Yes,2,0,Patient reports shortness of breath and fatigue.
+237,50,Female,110.6,177.9,102.5,67.0,24.9,Yes,3,0,Patient shows signs of improvement.
+238,31,Male,147.2,237.1,111.0,71.2,26.2,Yes,7,0,Follow-up required due to high cholesterol levels.
+239,38,Male,130.6,232.7,100.9,75.5,26.2,No,5,0,Patient reports shortness of breath and fatigue.
+240,65,Male,111.6,218.3,133.9,67.1,24.0,No,3,1,Patient reports shortness of breath and fatigue.
+241,37,Male,129.5,167.2,87.5,65.2,26.3,No,1,1,"Elevated BP noted, recommended lifestyle changes."
+242,25,Female,134.6,190.5,103.9,72.3,20.8,Yes,3,0,Patient shows signs of improvement.
+243,24,Female,129.3,236.4,85.2,61.1,25.0,No,4,0,Follow-up required due to high cholesterol levels.
+244,84,Male,96.4,204.3,73.6,61.1,25.9,Yes,1,0,"No signs of infection, patient stable."
+245,34,Female,109.1,269.6,87.8,78.8,26.0,Yes,3,0,Patient reports shortness of breath and fatigue.
+246,50,Male,116.3,211.8,99.3,60.5,26.0,Yes,3,0,Follow-up required due to high cholesterol levels.
+247,65,Female,118.9,205.8,91.4,78.7,26.8,No,4,0,"No signs of infection, patient stable."
+248,76,Male,129.3,190.7,86.2,76.6,28.9,No,1,0,Patient shows signs of improvement.
+249,39,Female,122.7,204.0,71.9,54.7,30.5,No,2,0,Patient shows signs of improvement.
+250,47,Female,100.0,195.4,98.3,65.2,24.4,No,3,0,Follow-up required due to high cholesterol levels.
+251,55,Male,125.7,221.2,69.9,83.9,22.2,Yes,2,1,"No signs of infection, patient stable."
+252,68,Female,129.2,228.7,115.2,62.2,22.8,No,1,0,Patient shows signs of improvement.
+253,71,Male,128.4,176.4,101.6,67.4,25.1,Yes,1,0,Follow-up required due to high cholesterol levels.
+254,25,Male,136.2,160.1,70.8,76.6,25.6,No,3,0,Patient shows signs of improvement.
+255,44,Male,132.5,144.9,93.8,79.8,23.9,No,0,0,Patient shows signs of improvement.
+256,44,Male,126.9,215.2,85.0,69.5,21.8,No,3,1,Patient shows signs of improvement.
+257,38,Female,118.9,166.9,106.4,66.0,25.2,Yes,1,0,"Elevated BP noted, recommended lifestyle changes."
+258,47,Female,95.1,135.4,126.8,86.2,27.7,Yes,1,0,"No signs of infection, patient stable."
+259,45,Female,126.4,211.7,62.5,89.4,29.4,Yes,7,0,Follow-up required due to high cholesterol levels.
+260,81,Male,123.1,274.8,102.3,81.8,24.8,Yes,3,1,Follow-up required due to high cholesterol levels.
+261,86,Female,124.1,199.8,96.8,72.9,25.3,Yes,2,0,"No signs of infection, patient stable."
+262,78,Male,100.8,225.2,113.4,63.9,23.3,No,4,0,"No signs of infection, patient stable."
+263,65,Female,103.8,202.5,104.3,63.7,26.9,Yes,4,0,"No signs of infection, patient stable."
+264,36,Female,135.8,197.0,85.0,77.2,23.6,Yes,0,0,"No signs of infection, patient stable."
+265,21,Female,119.4,227.6,93.6,76.2,29.3,Yes,3,0,Patient reports shortness of breath and fatigue.
+266,52,Male,130.2,191.3,84.1,86.0,19.9,Yes,3,0,Follow-up required due to high cholesterol levels.
+267,81,Female,120.4,208.0,121.5,78.5,25.6,No,7,0,Patient reports shortness of breath and fatigue.
+268,66,Female,120.4,209.7,100.4,57.0,28.2,Yes,3,1,Patient shows signs of improvement.
+269,34,Male,134.1,180.0,138.0,82.5,27.7,No,2,0,Patient shows signs of improvement.
+270,61,Female,112.3,229.8,98.8,62.0,37.8,No,4,0,Follow-up required due to high cholesterol levels.
+271,47,Male,121.4,194.8,85.8,68.2,28.4,No,2,0,Patient shows signs of improvement.
+272,63,Female,113.1,177.3,69.7,74.5,23.0,Yes,2,1,"No signs of infection, patient stable."
+273,23,Male,113.5,216.1,63.9,92.0,26.6,No,3,0,Patient reports shortness of breath and fatigue.
+274,54,Male,115.4,173.0,68.3,103.1,19.9,Yes,0,1,"No signs of infection, patient stable."
+275,41,Female,123.3,200.8,105.3,78.1,26.7,Yes,0,0,Patient shows signs of improvement.
+276,63,Male,112.8,199.7,110.2,70.2,23.7,Yes,3,0,Patient reports shortness of breath and fatigue.
+277,70,Male,138.8,232.6,68.4,77.3,30.7,Yes,4,0,"No signs of infection, patient stable."
+278,77,Male,106.6,214.2,117.9,80.9,24.8,Yes,6,0,Follow-up required due to high cholesterol levels.
+279,80,Male,117.2,199.2,90.3,68.8,26.5,No,4,1,"No signs of infection, patient stable."
+280,49,Male,113.4,224.5,102.9,90.0,24.5,No,2,1,Patient shows signs of improvement.
+281,50,Male,141.7,241.7,132.2,74.3,34.0,Yes,2,0,Patient reports shortness of breath and fatigue.
+282,84,Female,122.9,216.7,117.9,77.0,25.7,No,8,0,Follow-up required due to high cholesterol levels.
+283,35,Male,135.5,200.3,94.6,78.7,34.3,Yes,4,1,Patient reports shortness of breath and fatigue.
+284,42,Male,97.7,160.6,82.2,76.2,30.3,No,3,0,Follow-up required due to high cholesterol levels.
+285,71,Female,124.0,168.0,57.0,80.4,28.9,No,1,0,Patient reports shortness of breath and fatigue.
+286,75,Female,133.3,190.8,85.6,65.8,28.5,No,2,0,Patient shows signs of improvement.
+287,84,Female,121.2,181.7,95.8,66.4,28.6,No,1,0,Follow-up required due to high cholesterol levels.
+288,63,Female,136.0,194.4,80.3,61.0,19.3,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+289,41,Female,112.2,201.7,97.4,76.4,25.9,Yes,4,0,Patient reports shortness of breath and fatigue.
+290,49,Female,141.1,215.9,101.5,79.8,30.4,Yes,0,0,Patient reports shortness of breath and fatigue.
+291,64,Female,154.5,197.9,95.5,76.6,26.8,No,2,0,"No signs of infection, patient stable."
+292,40,Male,114.6,214.6,87.0,88.7,21.4,Yes,5,0,Follow-up required due to high cholesterol levels.
+293,83,Male,113.3,201.9,103.4,71.9,26.8,No,5,0,"Elevated BP noted, recommended lifestyle changes."
+294,44,Female,141.8,140.7,108.8,78.7,33.8,Yes,3,1,Patient shows signs of improvement.
+295,19,Male,143.7,171.8,78.2,61.1,32.0,No,1,0,"No signs of infection, patient stable."
+296,34,Male,112.2,195.7,128.2,68.1,26.8,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+297,50,Male,113.7,163.7,98.0,79.0,30.8,No,2,1,Follow-up required due to high cholesterol levels.
+298,26,Female,115.8,218.0,100.4,80.5,25.5,Yes,5,1,"Elevated BP noted, recommended lifestyle changes."
+299,60,Female,99.8,245.9,114.2,69.1,20.2,Yes,1,0,Patient reports shortness of breath and fatigue.
+300,65,Male,106.2,236.6,104.7,71.3,23.3,No,3,0,Patient reports shortness of breath and fatigue.
+301,56,Female,104.9,193.6,119.1,56.8,33.3,No,3,1,"No signs of infection, patient stable."
+302,59,Male,108.5,244.7,105.7,68.4,25.9,Yes,4,1,Follow-up required due to high cholesterol levels.
+303,43,Male,119.5,204.5,87.8,80.9,26.0,Yes,2,1,Follow-up required due to high cholesterol levels.
+304,67,Male,123.5,189.9,107.2,77.8,25.8,Yes,2,1,"Elevated BP noted, recommended lifestyle changes."
+305,42,Male,143.3,181.6,77.1,77.0,34.6,Yes,1,0,"No signs of infection, patient stable."
+306,41,Female,105.0,190.9,102.2,72.5,33.5,Yes,0,0,Follow-up required due to high cholesterol levels.
+307,30,Female,134.8,188.4,99.3,72.1,35.9,No,2,0,Patient reports shortness of breath and fatigue.
+308,77,Female,116.8,205.1,95.8,65.4,26.4,Yes,2,0,"Elevated BP noted, recommended lifestyle changes."
+309,24,Male,119.3,204.8,97.4,79.0,28.2,No,1,0,Patient shows signs of improvement.
+310,74,Female,130.1,200.1,62.4,76.2,20.9,No,5,0,Patient reports shortness of breath and fatigue.
+311,53,Male,103.2,213.1,89.0,76.9,32.9,Yes,7,0,"No signs of infection, patient stable."
+312,62,Female,125.7,235.7,101.9,66.7,22.3,Yes,2,1,Follow-up required due to high cholesterol levels.
+313,37,Male,122.5,228.5,103.2,50.5,27.9,No,2,0,Patient reports shortness of breath and fatigue.
+314,82,Male,127.4,155.5,79.4,83.0,22.6,Yes,2,0,Patient shows signs of improvement.
+315,25,Male,124.3,123.4,125.3,67.2,24.6,No,1,0,Patient shows signs of improvement.
+316,33,Female,156.8,228.0,82.7,63.4,23.7,Yes,2,0,"No signs of infection, patient stable."
+317,31,Female,110.4,159.0,119.4,78.9,24.6,Yes,2,1,Patient reports shortness of breath and fatigue.
+318,32,Female,112.0,193.3,108.5,68.1,24.8,Yes,5,0,"Elevated BP noted, recommended lifestyle changes."
+319,83,Female,110.7,164.9,87.1,82.6,24.8,No,0,1,Patient reports shortness of breath and fatigue.
+320,49,Male,111.7,145.9,135.5,78.2,30.3,Yes,3,0,Patient shows signs of improvement.
+321,80,Female,110.4,216.2,76.1,78.8,22.6,No,2,0,"No signs of infection, patient stable."
+322,68,Female,137.8,222.8,118.4,58.3,27.9,Yes,5,0,"No signs of infection, patient stable."
+323,42,Male,141.3,182.7,120.0,84.1,31.9,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+324,75,Male,111.4,122.3,86.6,74.6,24.9,Yes,5,1,"No signs of infection, patient stable."
+325,80,Male,107.5,183.6,127.8,68.3,24.1,No,6,0,"No signs of infection, patient stable."
+326,79,Female,127.1,211.8,95.0,73.4,26.1,No,3,1,"No signs of infection, patient stable."
+327,39,Male,111.7,155.6,105.8,54.2,31.7,No,5,0,"No signs of infection, patient stable."
+328,75,Male,129.5,205.5,105.2,76.1,27.8,No,2,1,"No signs of infection, patient stable."
+329,75,Male,123.0,199.5,97.3,61.7,24.9,No,0,0,Patient shows signs of improvement.
+330,66,Female,97.3,217.4,116.2,58.5,28.9,No,6,1,Patient reports shortness of breath and fatigue.
+331,69,Male,143.2,203.6,115.9,56.8,22.6,Yes,5,0,Follow-up required due to high cholesterol levels.
+332,59,Female,146.9,170.8,65.0,83.1,29.7,No,3,0,"No signs of infection, patient stable."
+333,87,Female,110.8,235.9,126.1,65.7,28.6,No,6,0,Follow-up required due to high cholesterol levels.
+334,32,Male,114.2,195.2,66.8,87.3,25.8,No,3,1,Follow-up required due to high cholesterol levels.
+335,71,Male,124.3,199.2,120.7,66.6,23.6,Yes,1,0,Patient shows signs of improvement.
+336,77,Female,125.0,172.0,122.5,54.9,23.5,Yes,0,0,"No signs of infection, patient stable."
+337,25,Male,129.9,186.7,78.2,60.8,29.1,Yes,2,1,Follow-up required due to high cholesterol levels.
+338,70,Male,150.2,173.5,91.8,84.4,31.9,No,2,0,"No signs of infection, patient stable."
+339,77,Female,117.3,194.8,77.9,70.4,24.5,Yes,4,0,"Elevated BP noted, recommended lifestyle changes."
+340,22,Female,108.0,251.4,95.7,66.5,28.8,Yes,5,0,"Elevated BP noted, recommended lifestyle changes."
+341,85,Male,99.3,158.8,93.8,73.6,18.7,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+342,23,Female,109.0,151.6,115.6,77.0,24.7,No,4,1,Follow-up required due to high cholesterol levels.
+343,64,Male,119.5,244.1,126.2,83.2,26.9,Yes,3,1,"Elevated BP noted, recommended lifestyle changes."
+344,72,Male,146.9,193.7,127.9,86.5,23.4,No,2,0,Patient shows signs of improvement.
+345,57,Male,112.2,179.9,88.8,68.4,23.3,No,3,1,Patient shows signs of improvement.
+346,69,Female,123.4,231.2,95.8,58.7,24.3,No,2,0,Follow-up required due to high cholesterol levels.
+347,33,Male,119.8,181.8,66.3,67.9,28.2,No,3,0,"No signs of infection, patient stable."
+348,30,Male,137.8,254.8,83.9,74.6,26.3,Yes,5,0,Patient reports shortness of breath and fatigue.
+349,47,Male,157.9,220.3,119.3,62.4,18.0,No,2,0,"No signs of infection, patient stable."
+350,36,Female,112.0,185.4,132.3,62.4,18.5,Yes,5,0,"No signs of infection, patient stable."
+351,34,Female,112.7,264.7,75.3,75.4,24.6,Yes,1,1,"No signs of infection, patient stable."
+352,80,Female,135.7,181.8,88.2,71.5,28.8,Yes,0,1,"No signs of infection, patient stable."
+353,36,Female,130.2,222.3,99.5,72.3,16.0,Yes,4,0,Patient reports shortness of breath and fatigue.
+354,75,Female,147.7,209.0,105.6,64.4,25.0,No,6,0,"Elevated BP noted, recommended lifestyle changes."
+355,72,Male,128.8,239.1,83.8,69.7,24.9,No,4,1,"No signs of infection, patient stable."
+356,79,Female,114.6,246.8,108.5,62.8,32.6,No,3,1,Patient shows signs of improvement.
+357,40,Female,128.9,201.0,90.5,80.9,25.5,Yes,5,1,Follow-up required due to high cholesterol levels.
+358,26,Female,136.6,177.4,99.7,82.4,28.5,Yes,2,0,Follow-up required due to high cholesterol levels.
+359,29,Male,132.3,213.8,110.9,53.5,27.6,Yes,2,1,Patient shows signs of improvement.
+360,18,Female,127.6,179.7,100.1,62.7,18.5,No,2,0,"No signs of infection, patient stable."
+361,75,Female,136.0,260.4,91.3,57.0,30.1,Yes,4,0,Patient reports shortness of breath and fatigue.
+362,18,Male,137.5,204.1,97.8,65.5,27.9,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+363,51,Female,140.7,189.0,98.2,71.2,29.0,No,5,0,Follow-up required due to high cholesterol levels.
+364,65,Male,129.7,205.5,92.6,57.5,42.7,No,2,0,"Elevated BP noted, recommended lifestyle changes."
+365,18,Male,117.5,159.6,94.8,62.8,18.7,No,2,0,Patient reports shortness of breath and fatigue.
+366,33,Male,122.2,170.9,132.0,62.0,33.9,Yes,3,0,Follow-up required due to high cholesterol levels.
+367,78,Male,138.1,236.0,111.2,74.1,25.9,No,3,1,"Elevated BP noted, recommended lifestyle changes."
+368,81,Male,107.7,180.3,94.1,72.7,28.1,Yes,4,0,Patient reports shortness of breath and fatigue.
+369,80,Female,125.5,168.6,113.9,64.8,26.8,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+370,86,Male,114.1,216.1,93.3,73.8,25.3,Yes,0,0,"No signs of infection, patient stable."
+371,39,Male,120.4,235.6,123.5,66.5,24.7,Yes,1,1,Patient reports shortness of breath and fatigue.
+372,84,Female,139.2,221.6,107.4,69.3,28.3,No,4,0,"Elevated BP noted, recommended lifestyle changes."
+373,43,Male,122.9,229.9,97.9,88.7,20.9,No,3,0,"No signs of infection, patient stable."
+374,33,Female,120.7,177.3,109.0,85.4,30.0,No,4,0,"No signs of infection, patient stable."
+375,68,Female,99.6,157.3,68.6,59.0,25.3,Yes,1,1,Patient reports shortness of breath and fatigue.
+376,74,Female,131.2,245.0,77.5,80.3,22.5,No,5,1,Patient shows signs of improvement.
+377,46,Male,129.7,190.3,76.1,80.1,25.2,No,3,0,Follow-up required due to high cholesterol levels.
+378,86,Male,152.4,192.5,102.9,60.5,32.0,Yes,4,0,Patient reports shortness of breath and fatigue.
+379,64,Male,115.4,239.8,134.7,80.2,24.9,No,4,1,"No signs of infection, patient stable."
+380,79,Female,123.3,216.7,144.6,87.4,28.4,Yes,4,0,"No signs of infection, patient stable."
+381,86,Male,123.7,213.7,112.8,60.8,24.1,No,1,0,Patient reports shortness of breath and fatigue.
+382,33,Male,143.7,265.0,110.0,62.8,30.0,Yes,4,0,Patient shows signs of improvement.
+383,65,Male,118.6,180.7,64.0,82.2,29.7,Yes,3,0,Follow-up required due to high cholesterol levels.
+384,56,Female,124.2,227.8,89.1,74.7,34.4,No,2,0,"Elevated BP noted, recommended lifestyle changes."
+385,50,Female,129.1,201.7,84.2,77.5,26.3,Yes,5,0,Patient reports shortness of breath and fatigue.
+386,40,Male,122.8,208.1,87.6,75.4,29.7,No,4,0,Follow-up required due to high cholesterol levels.
+387,27,Male,113.3,245.9,96.6,75.9,27.4,No,3,1,Follow-up required due to high cholesterol levels.
+388,86,Male,122.9,215.2,90.6,58.7,32.2,Yes,4,0,"No signs of infection, patient stable."
+389,51,Male,136.1,216.1,60.4,82.5,24.1,No,4,1,"Elevated BP noted, recommended lifestyle changes."
+390,69,Female,104.6,232.2,115.0,83.7,30.0,Yes,3,0,Patient reports shortness of breath and fatigue.
+391,27,Female,122.0,189.1,78.5,69.7,26.2,Yes,1,0,"No signs of infection, patient stable."
+392,36,Female,109.5,174.8,104.8,71.6,26.7,Yes,2,0,"No signs of infection, patient stable."
+393,75,Female,137.9,168.7,141.5,56.7,27.4,Yes,0,1,Patient shows signs of improvement.
+394,18,Male,97.2,141.0,81.6,77.1,28.0,Yes,4,1,Follow-up required due to high cholesterol levels.
+395,86,Male,111.6,261.7,49.4,77.7,26.5,Yes,1,0,Patient reports shortness of breath and fatigue.
+396,21,Male,125.7,166.9,94.3,71.4,27.9,Yes,5,1,Patient reports shortness of breath and fatigue.
+397,33,Female,143.5,193.4,122.0,83.2,33.3,Yes,1,0,Patient reports shortness of breath and fatigue.
+398,41,Male,119.0,191.7,139.2,68.7,30.9,No,4,1,"No signs of infection, patient stable."
+399,19,Female,111.7,209.2,75.4,77.6,30.5,No,1,1,Patient shows signs of improvement.
+400,49,Female,148.2,224.5,109.9,61.8,25.2,Yes,6,1,"Elevated BP noted, recommended lifestyle changes."
+401,41,Male,98.3,225.8,90.7,71.8,23.4,No,4,0,"No signs of infection, patient stable."
+402,29,Male,87.0,182.5,97.9,70.3,30.8,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+403,67,Male,126.6,195.0,152.9,74.3,30.5,No,3,0,Patient shows signs of improvement.
+404,52,Female,112.5,208.5,69.9,68.3,32.9,No,3,0,Follow-up required due to high cholesterol levels.
+405,50,Male,104.7,192.5,105.1,70.7,24.6,No,4,0,Patient reports shortness of breath and fatigue.
+406,50,Female,130.6,248.2,109.4,80.3,26.1,No,2,0,"Elevated BP noted, recommended lifestyle changes."
+407,78,Male,123.7,214.7,121.7,67.6,20.4,Yes,4,0,"No signs of infection, patient stable."
+408,68,Female,111.5,222.0,102.0,55.9,25.4,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+409,60,Female,100.8,219.9,106.2,89.5,31.0,No,3,0,Follow-up required due to high cholesterol levels.
+410,29,Male,133.1,235.2,92.2,85.8,25.1,No,2,0,Patient reports shortness of breath and fatigue.
+411,84,Female,129.8,205.4,105.4,59.1,29.6,No,4,1,"Elevated BP noted, recommended lifestyle changes."
+412,82,Female,118.5,161.1,93.1,78.9,26.2,Yes,3,0,Follow-up required due to high cholesterol levels.
+413,50,Male,147.7,212.0,112.4,67.0,28.3,Yes,1,0,"No signs of infection, patient stable."
+414,57,Female,103.9,180.5,92.6,74.6,22.4,Yes,1,1,Patient shows signs of improvement.
+415,60,Male,97.1,184.1,107.5,74.9,27.3,Yes,2,0,"No signs of infection, patient stable."
+416,61,Female,109.6,217.6,99.4,69.7,15.0,No,2,0,Patient reports shortness of breath and fatigue.
+417,46,Male,119.3,237.1,122.5,64.2,26.3,Yes,1,0,"No signs of infection, patient stable."
+418,30,Male,123.7,200.6,99.0,65.1,20.5,Yes,6,0,"No signs of infection, patient stable."
+419,29,Female,116.4,209.3,64.5,62.8,31.8,Yes,2,1,"No signs of infection, patient stable."
+420,63,Female,125.3,251.1,125.2,63.7,30.1,Yes,5,0,"No signs of infection, patient stable."
+421,19,Female,101.2,207.2,81.9,71.3,28.9,No,7,0,Patient reports shortness of breath and fatigue.
+422,52,Female,141.7,278.1,86.9,64.8,33.1,Yes,5,0,Follow-up required due to high cholesterol levels.
+423,25,Female,118.8,217.0,88.1,78.8,23.2,No,4,0,"Elevated BP noted, recommended lifestyle changes."
+424,43,Male,136.8,147.2,127.5,86.9,34.0,Yes,3,1,Patient shows signs of improvement.
+425,51,Female,125.1,222.6,57.3,66.2,30.7,No,4,0,"Elevated BP noted, recommended lifestyle changes."
+426,24,Male,126.9,211.4,162.8,74.4,26.1,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+427,85,Male,128.5,238.7,121.1,77.0,31.5,Yes,2,0,Patient shows signs of improvement.
+428,75,Female,126.7,220.2,104.5,76.7,22.6,Yes,4,0,Patient reports shortness of breath and fatigue.
+429,46,Male,129.6,195.8,98.9,72.8,23.7,Yes,1,0,Patient shows signs of improvement.
+430,53,Male,139.9,163.3,105.7,79.4,24.6,Yes,4,1,Patient reports shortness of breath and fatigue.
+431,38,Male,122.9,193.7,110.4,76.8,24.9,No,6,1,"Elevated BP noted, recommended lifestyle changes."
+432,53,Male,130.6,174.5,112.9,59.6,22.8,No,3,1,Patient reports shortness of breath and fatigue.
+433,27,Female,118.7,182.6,111.1,80.7,31.9,Yes,1,1,Follow-up required due to high cholesterol levels.
+434,41,Male,141.6,217.7,101.8,80.9,26.0,Yes,2,0,Patient shows signs of improvement.
+435,81,Female,109.9,250.1,96.1,64.4,28.4,No,4,0,Follow-up required due to high cholesterol levels.
+436,66,Female,147.0,211.8,97.0,72.4,24.7,Yes,3,1,"Elevated BP noted, recommended lifestyle changes."
+437,53,Male,119.4,164.1,96.1,78.8,19.7,No,1,1,Patient shows signs of improvement.
+438,41,Female,98.5,213.3,122.7,69.9,28.1,Yes,7,1,"Elevated BP noted, recommended lifestyle changes."
+439,40,Female,121.9,235.9,111.9,82.7,19.4,No,2,0,Follow-up required due to high cholesterol levels.
+440,79,Female,109.8,181.7,41.2,95.6,26.7,No,5,0,"Elevated BP noted, recommended lifestyle changes."
+441,54,Male,132.6,196.0,113.1,64.1,21.5,No,6,1,Patient shows signs of improvement.
+442,29,Female,110.2,200.4,103.9,58.2,34.9,No,1,1,Patient shows signs of improvement.
+443,72,Female,113.3,176.5,99.6,75.0,30.6,No,0,1,"Elevated BP noted, recommended lifestyle changes."
+444,30,Female,91.7,219.4,92.2,79.2,27.4,Yes,2,0,Patient shows signs of improvement.
+445,40,Male,113.2,196.4,122.5,69.7,32.1,No,3,0,Patient shows signs of improvement.
+446,47,Female,83.6,212.6,119.0,86.5,23.6,Yes,5,0,"Elevated BP noted, recommended lifestyle changes."
+447,34,Male,96.2,173.4,84.5,58.6,29.2,No,0,1,Follow-up required due to high cholesterol levels.
+448,79,Male,131.4,186.9,108.1,78.9,27.8,No,0,0,Patient shows signs of improvement.
+449,30,Male,131.8,221.7,80.6,65.9,28.1,Yes,3,0,Patient shows signs of improvement.
+450,76,Male,126.4,188.8,72.4,89.2,32.1,Yes,4,1,Patient shows signs of improvement.
+451,36,Male,105.5,251.8,87.5,91.9,29.9,Yes,3,0,Patient shows signs of improvement.
+452,66,Male,119.3,188.0,117.2,64.3,28.2,Yes,4,1,"Elevated BP noted, recommended lifestyle changes."
+453,29,Female,119.9,206.7,119.1,66.5,20.4,No,3,0,Follow-up required due to high cholesterol levels.
+454,78,Male,102.6,228.0,110.3,80.6,23.2,Yes,5,1,Follow-up required due to high cholesterol levels.
+455,36,Female,142.6,157.4,114.5,68.1,26.5,No,6,0,Patient reports shortness of breath and fatigue.
+456,26,Female,133.2,147.2,110.3,71.5,27.4,Yes,3,1,Patient shows signs of improvement.
+457,88,Male,116.7,154.2,87.2,72.3,22.5,Yes,4,1,Patient shows signs of improvement.
+458,45,Female,120.4,237.9,108.6,52.8,36.6,No,1,0,Patient reports shortness of breath and fatigue.
+459,69,Female,123.1,183.4,116.0,71.9,33.1,No,3,0,Follow-up required due to high cholesterol levels.
+460,33,Female,89.4,276.7,115.1,65.1,29.4,Yes,3,0,"No signs of infection, patient stable."
+461,86,Female,116.3,183.1,123.8,67.1,27.3,No,2,0,"No signs of infection, patient stable."
+462,29,Male,109.8,205.5,114.2,86.4,26.2,No,4,1,Follow-up required due to high cholesterol levels.
+463,42,Female,105.0,246.3,107.0,59.4,23.2,No,3,0,Patient shows signs of improvement.
+464,69,Male,115.8,260.2,121.4,80.1,27.3,No,5,0,"No signs of infection, patient stable."
+465,70,Female,147.0,261.8,99.5,69.2,28.0,No,3,0,"Elevated BP noted, recommended lifestyle changes."
+466,40,Female,129.6,236.3,82.4,69.2,22.0,No,3,1,"Elevated BP noted, recommended lifestyle changes."
+467,33,Male,111.4,230.7,96.7,79.9,28.3,No,2,1,Patient reports shortness of breath and fatigue.
+468,74,Female,128.6,217.8,85.1,75.4,26.4,No,0,0,Follow-up required due to high cholesterol levels.
+469,56,Female,141.0,223.4,86.5,77.7,19.4,Yes,4,0,Follow-up required due to high cholesterol levels.
+470,70,Female,133.9,183.5,97.1,81.7,23.6,No,3,0,"No signs of infection, patient stable."
+471,59,Male,120.9,175.5,84.2,68.7,25.3,Yes,2,0,Patient shows signs of improvement.
+472,75,Female,110.3,199.9,93.8,65.9,34.6,No,4,0,Follow-up required due to high cholesterol levels.
+473,56,Male,130.5,194.9,62.1,61.1,29.2,No,6,0,"No signs of infection, patient stable."
+474,31,Female,125.9,186.4,104.3,63.7,21.7,No,4,0,"No signs of infection, patient stable."
+475,22,Male,133.4,220.9,100.0,101.5,28.9,No,4,0,Follow-up required due to high cholesterol levels.
+476,52,Male,129.5,228.7,83.7,84.4,20.8,Yes,2,0,"No signs of infection, patient stable."
+477,35,Female,135.7,202.7,113.2,58.5,31.3,Yes,1,0,Patient reports shortness of breath and fatigue.
+478,26,Female,112.0,244.3,118.8,58.8,25.1,No,1,0,Patient reports shortness of breath and fatigue.
+479,75,Male,139.8,165.7,67.8,76.8,26.6,Yes,1,1,Follow-up required due to high cholesterol levels.
+480,34,Male,123.0,194.2,84.7,77.5,32.3,No,4,1,Patient shows signs of improvement.
+481,24,Female,151.1,178.5,84.6,77.5,21.9,No,3,0,Patient reports shortness of breath and fatigue.
+482,63,Male,109.7,144.0,81.2,69.5,21.4,Yes,4,0,Patient reports shortness of breath and fatigue.
+483,30,Female,146.0,197.5,116.6,70.7,24.7,Yes,4,1,Follow-up required due to high cholesterol levels.
+484,57,Female,123.0,196.3,96.1,75.3,31.2,No,2,1,"Elevated BP noted, recommended lifestyle changes."
+485,59,Female,110.2,245.4,94.7,72.9,20.9,No,6,0,"No signs of infection, patient stable."
+486,26,Female,112.7,218.9,59.9,49.8,15.7,Yes,3,0,Patient reports shortness of breath and fatigue.
+487,67,Male,115.2,169.3,112.7,69.7,25.2,No,1,0,"Elevated BP noted, recommended lifestyle changes."
+488,44,Female,126.4,255.6,75.2,63.5,29.2,Yes,3,0,Patient shows signs of improvement.
+489,83,Male,127.8,236.6,101.2,73.8,31.8,No,2,0,"Elevated BP noted, recommended lifestyle changes."
+490,22,Female,111.4,217.5,105.5,101.9,25.1,No,2,0,Follow-up required due to high cholesterol levels.
+491,46,Male,119.6,193.2,127.2,75.7,25.4,Yes,3,0,Patient shows signs of improvement.
+492,54,Female,152.1,171.2,73.8,68.9,31.6,Yes,3,0,Patient shows signs of improvement.
+493,55,Male,145.9,188.8,39.6,81.2,19.5,Yes,3,0,"Elevated BP noted, recommended lifestyle changes."
+494,25,Male,126.5,232.7,103.7,76.8,25.4,No,3,0,Follow-up required due to high cholesterol levels.
+495,82,Female,120.6,256.5,136.0,76.2,27.8,No,6,0,Patient reports shortness of breath and fatigue.
+496,34,Female,121.8,246.3,124.8,78.1,28.8,No,6,0,"Elevated BP noted, recommended lifestyle changes."
+497,88,Female,129.2,185.3,104.2,92.6,25.0,No,3,0,Patient reports shortness of breath and fatigue.
+498,62,Female,104.7,166.4,90.2,60.7,27.1,Yes,3,1,"Elevated BP noted, recommended lifestyle changes."
+499,21,Male,116.1,204.2,116.1,76.7,17.0,No,3,0,Patient reports shortness of breath and fatigue.
+500,53,Female,95.0,146.9,80.5,62.7,24.4,No,2,1,"Elevated BP noted, recommended lifestyle changes."
