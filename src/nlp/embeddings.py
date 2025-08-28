@@ -42,6 +42,3 @@ def embed_text(texts, normalize=True, use_last4=False, max_length=512):
 
     return emb.cpu()
 
-# Example
-v = embed_text(["NSTEMI ruled out. Patient discharged.", "Acute MI suspected; start heparin."])
-print(v.shape)  # torch.Size([2, 768])
