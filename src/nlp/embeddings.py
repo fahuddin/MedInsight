@@ -32,7 +32,11 @@ def embed_text(texts, normalize=True, use_last4=False, max_length=512):
         hidden = outputs.last_hidden_state  # (batch, seq, hidden)
 
     # Masked mean pooling over tokens (ignore PAD)
-    attn = inputs["attention_mask"].unsqueeze(-1)  # (batch, seq, 1)
+    special = set(tokenizer.all_special_ids)
+    mask = inputs["attention_mask"].clone()
+    ids = inputs["input_ids"]
+    mask[id.isin(torch.tensor(list(special), device=ids.device))] = 0
+    attn = mask.unsqueeze(-1)
     summed = (hidden * attn).sum(dim=1)
     counts = attn.sum(dim=1).clamp(min=1)
     emb = summed / counts  # (batch, hidden)
