@@ -10,6 +10,7 @@ from sklearn.metrics import roc_auc_score, average_precision_score, classificati
 from features.feature_engineering import feature_engineering
 
 DEFAULT_MODEL_PATH = "models/xgb_readmission_model.pkl"
+DEFAULT_DATA_PATH = "./data/Synthetic_Clinical_Data.csv"
 RANDOM_STATE = 42
 
 def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
