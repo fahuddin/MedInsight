@@ -19,3 +19,4 @@ def root():
 async def predict(file: UploadFile = File(...)):
     df = pd.read_csv(file.file)
     model = train_and_save_model(file.file)
+    
