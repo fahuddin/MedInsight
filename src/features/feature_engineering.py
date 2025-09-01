@@ -21,7 +21,6 @@ def feature_engineering(df):
     
     df["insurance_target_enc"] = df["insurance"].map(means)
 
-
     structured = df.drop(columns=["clinical_notes","readmission"], errors="ignore")
 
     structured = pd.get_dummies(structured, columns=["gender", "smoker"], drop_first=True)
