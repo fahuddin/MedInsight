@@ -8,9 +8,29 @@ from src.models.evaluate import evaluate_model
 from src.nlp.text_cleaning import clean_text
 from src.nlp.embeddings import generate_embeddings
 from src.nlp.ner_extraction import extract_entities
+from pydantic import BaseModel
+import joblib
 
+model = joblib.load("models/xgb_readmission_model.pkl")
+fe_pipeline = joblib.load("models/xgb_readmission_model_fe.pkl")
 
 app = FastAPI(title="MediInsight API", version="1.0")
+
+
+
+class PatientData(BaseModel):
+    ID: int
+    Age: int
+    BloodPressure: float
+    Cholesterol: float
+    Glucose: float
+    HeartRate: float
+    BMI: float
+    Smoker: bool
+    NumberOfVisits: int
+    Readmission: bool
+    ClinicalNotes: str
+    Gender: str
 
 @app.get("/")
 def root():
@@ -25,6 +45,6 @@ async def predict(data: PatientData):
 
     # Make predictions
     predictions = model.predict(df_fe)
-    
+
     return {"predictions": predictions.tolist()}
     
