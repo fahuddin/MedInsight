@@ -8,9 +8,15 @@ from src.models.evaluate import evaluate_model
 from src.nlp.text_cleaning import clean_text
 from src.nlp.embeddings import generate_embeddings
 from src.nlp.ner_extraction import extract_entities
+from pydantic import BaseModel
+import joblib
 
+model = joblib.load("models/xgb_readmission_model.pkl")
+fe_pipeline = joblib.load("models/xgb_readmission_model_fe.pkl")
 
 app = FastAPI(title="MediInsight API", version="1.0")
+
+
 
 class PatientData(BaseModel):
     ID: int
@@ -35,8 +41,10 @@ async def predict(data: PatientData):
     df = pd.DataFrame([data.dict()])
 
     # Feature Engineering
-    df_fe = feature_engineering(df)
+    df_fe = fe_pipeline.transform(df)
 
+    # Make predictions
+    predictions = model.predict(df_fe)
 
     return {"predictions": predictions.tolist()}
     
