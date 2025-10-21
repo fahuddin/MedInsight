@@ -16,7 +16,15 @@ app = FastAPI(title="MediInsight API", version="1.0")
 def root():
     return {"message":"Welcome to the MediInsight API"}
 
-async def predict(file: UploadFile = File(...)):
-    df = pd.read_csv(file.file)
-    model = train_and_save_model(file.file)
+async def predict(data: PatientData):
+    # Convert input data to DataFrame
+    df = pd.DataFrame([data.dict()])
+
+    # Feature Engineering
+    df_fe = fe_pipeline.transform(df)
+
+    # Make predictions
+    predictions = model.predict(df_fe)
+    
+    return {"predictions": predictions.tolist()}
     
