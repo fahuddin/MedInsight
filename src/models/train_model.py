@@ -92,4 +92,5 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     # 8) Save best model
     os.makedirs(os.path.dirname(model_path), exist_ok=True)
     joblib.dump(model, model_path)
+    joblib.dump(feature_engineering, model_path.replace(".pkl", "_fe.pkl"))
     print(f"✅ Model saved to {model_path} (best_iteration={model.get_booster().best_iteration})")
