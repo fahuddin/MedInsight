@@ -1,7 +1,8 @@
 import pandas as pd
 import numpy as np
-from nlp.text_cleaning import clean_text,lemmatize
-from nlp.embeddings import embed_text
+from ..nlp.text_cleaning import clean_text
+from ..nlp.embeddings import embed_text
+from ..nlp.text_cleaning import lemmatize
 
 def group_rare(series):
     threshold = 2

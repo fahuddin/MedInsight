@@ -7,7 +7,7 @@ from typing import Tuple
 from xgboost import XGBClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, average_precision_score, classification_report
-from features.feature_engineering import feature_engineering
+from src.features.feature_engineering import feature_engineering
 
 DEFAULT_MODEL_PATH = "models/xgb_readmission_model.pkl"
 DEFAULT_DATA_PATH = "./data/Synthetic_Clinical_Data.csv"
