@@ -1,7 +1,16 @@
 import spacy
 
 # Load scispaCy small biomedical model
-nlp = spacy.load("en_core_sci_sm")
+# Try to load the model
+try:
+    nlp = spacy.load("en_core_sci_lg")
+except OSError:
+    # fallback logic if model not installed
+    print("⚠️ Model en_core_sci_lg not found. Please install it.")
+    raise
+
+# Then use nlp to process text
+doc = nlp("Your biomedical/clinical text here …")
 
 def extract_entities(text: str) -> dict:
     """
