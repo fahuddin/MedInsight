@@ -84,6 +84,7 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     print("=== Test Metrics ===")
     print(f"ROC-AUC: {roc:.4f}")
     print(f"Average Precision (AUPRC): {ap:.4f}")
+    
 
     # Also show classification report at a default threshold (0.5)
     y_pred = (y_proba >= 0.5).astype(int)
@@ -94,3 +95,7 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     os.makedirs(os.path.dirname(model_path), exist_ok=True)
     joblib.dump(model, model_path)
     print(f"✅ Model saved to {model_path} (best_iteration={model.get_booster().best_iteration})")
+
+
+if __name__ == "__main__":
+    train_and_save_model(DEFAULT_DATA_PATH, DEFAULT_MODEL_PATH)
