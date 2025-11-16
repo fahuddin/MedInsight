@@ -5,6 +5,7 @@ import joblib
 import pandas as pd
 from typing import Tuple
 from xgboost import XGBClassifier
+from xgboost.callback import EarlyStopping
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import roc_auc_score, average_precision_score, classification_report
 from src.features.feature_engineering import feature_engineering
@@ -45,30 +46,24 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     neg = (y_tr == 0).sum()
     spw = max(1.0, neg / max(1, pos))  # avoid zero
 
-    # 5) Model
+      # 5) Define model (XGBoost 2.x style)
     model = XGBClassifier(
-        n_estimators=1000,
-        max_depth=5,
-        learning_rate=0.05,
-        subsample=0.9,
-        colsample_bytree=0.9,
-        reg_lambda=1.0,
         objective="binary:logistic",
-        eval_metric="logloss",
+        eval_metric="logloss",      # must go in constructor now
+        tree_method="hist",         # fast on tabular
+        n_estimators=500,
+        learning_rate=0.05,
+        max_depth=6,
         scale_pos_weight=spw,
         random_state=RANDOM_STATE,
-        n_jobs=-1,
-        tree_method="hist",  # fast CPU
-        # remove use_label_encoder (deprecated in recent xgboost)
     )
 
-    # 6) Train with early stopping on validation
+    
     model.fit(
-        X_tr, y_tr,
+        X_tr,
+        y_tr,
         eval_set=[(X_val, y_val)],
-        eval_metric="auc",           # use AUC for early stopping
-        verbose=False,
-        early_stopping_rounds=50
+        # verbose is no longer a kwarg in 2.x; training output is handled by callbacks
     )
 
     # 7) Evaluate on TEST (never seen during training)

@@ -35,7 +35,7 @@ def embed_text(texts, normalize=True, use_last4=False, max_length=512):
     special = set(tokenizer.all_special_ids)
     mask = inputs["attention_mask"].clone()
     ids = inputs["input_ids"]
-    mask[id.isin(torch.tensor(list(special), device=ids.device))] = 0
+    mask[(torch.tensor(list(special), device=ids.device))] = 0
     attn = mask.unsqueeze(-1)
     summed = (hidden * attn).sum(dim=1)
     counts = attn.sum(dim=1).clamp(min=1)
