@@ -3,6 +3,7 @@ pandas>=2.0.0
 numpy>=1.25.0
 joblib>=1.3.0
 matplotlib>=3.8.0
+seaborn>=0.13.2
 
 # Machine Learning
 xgboost>=2.0.0
@@ -22,10 +23,3 @@ regex>=2023.12.25
 
 # Optional: If you use tokenizers/models that need downloading
 sentencepiece>=0.2.0
-
-# Local modules (make sure these exist)
-# nlp/
-# ├── text_cleaning.py
-# └── embeddings.py
-# features/
-# └── feature_engineering.py
