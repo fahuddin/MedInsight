@@ -1,18 +1,35 @@
 # src/models/train_model.py
 
+
 import os
+import sys
 import joblib
 import pandas as pd
 from typing import Tuple
-from xgboost import XGBClassifier
-from xgboost.callback import EarlyStopping
+import xgboost as xgb
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import roc_auc_score, average_precision_score, classification_report
+from sklearn.metrics import (
+    roc_auc_score,
+    average_precision_score,
+    classification_report,
+)
+
+# When running this file directly (e.g. `python train_model.py` from
+# `src/models`), the package `src` may not be on sys.path. Add the
+# repository root to `sys.path` so `from src.features...` works.
+if __name__ == "__main__" and __package__ is None:
+    repo_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+    if repo_root not in sys.path:
+        sys.path.insert(0, repo_root)
+
 from src.features.feature_engineering import feature_engineering
 
-
+DEFAULT_DATA_PATH = os.path.join(
+    "C:\\Users\\fahud\\medinsight", 
+    "data", 
+    "Synthetic_Clinical_Data.csv"
+)
 DEFAULT_MODEL_PATH = "models/xgb_readmission_model.pkl"
-DEFAULT_DATA_PATH = "./data/Synthetic_Clinical_Data.csv"
 RANDOM_STATE = 42
 
 def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
@@ -25,11 +42,17 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     """
     # 1) Load
     df = pd.read_csv(data_path)
+    print(df.head())
     df = df.dropna(subset=["readmission"])  # ensure target present
+
+    print("Label distribution (full):")
+    print(df["readmission"].value_counts(normalize=True))
+
 
     # 2) Features / target
     X_full = feature_engineering(df)
     y_full = df["readmission"].astype(int)
+
 
     # 3) Train / test split (stratify keeps class balance)
     X_train, X_test, y_train, y_test = train_test_split(
@@ -45,33 +68,40 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     pos = (y_tr == 1).sum()
     neg = (y_tr == 0).sum()
     spw = max(1.0, neg / max(1, pos))  # avoid zero
-
+    print("pos:", pos, "neg:", neg, "scale_pos_weight:", spw)
       # 5) Define model (XGBoost 2.x style)
-    model = XGBClassifier(
-        objective="binary:logistic",
-        eval_metric="logloss",      # must go in constructor now
-        tree_method="hist",         # fast on tabular
-        n_estimators=500,
-        learning_rate=0.05,
-        max_depth=6,
-        scale_pos_weight=spw,
-        random_state=RANDOM_STATE,
+    dtrain = xgb.DMatrix(X_tr, label=y_tr)
+    dval = xgb.DMatrix(X_val, label=y_val)
+    dtest = xgb.DMatrix(X_test, label=y_test)
+
+    # 7) XGBoost params (old-version safe)
+    params = {
+        "objective": "binary:logistic",
+        "eval_metric": "logloss",
+        "eta": 0.05,             # learning_rate
+        "max_depth": 6,
+        "tree_method": "hist",   # if this errors on your version, change to "auto"
+        "scale_pos_weight": spw,
+        "seed": RANDOM_STATE,
+    }
+
+    evals = [(dtrain, "train"), (dval, "validation")]
+
+    # 8) Train with early stopping
+    booster = xgb.train(
+        params=params,
+        dtrain=dtrain,
+        num_boost_round=500,
+        evals=evals,
+        early_stopping_rounds=50,
+        verbose_eval=True,
     )
 
-    
-    model.fit(
-        X_tr,
-        y_tr,
-        eval_set=[(X_val, y_val)],
-        # verbose is no longer a kwarg in 2.x; training output is handled by callbacks
-    )
+    best_iter = getattr(booster, "best_iteration", None)
+    print("Best iteration:", best_iter)
 
-    # 7) Evaluate on TEST (never seen during training)
-    if hasattr(model, "predict_proba"):
-        y_proba = model.predict_proba(X_test)[:, 1]
-    else:
-        # fallback: decision function or predictions
-        y_proba = model.predict(X_test)
+    # 9) Evaluate on TEST
+    y_proba = booster.predict(dtest)  # probabilities for class 1
 
     roc = roc_auc_score(y_test, y_proba)
     ap = average_precision_score(y_test, y_proba)
@@ -79,17 +109,18 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     print("=== Test Metrics ===")
     print(f"ROC-AUC: {roc:.4f}")
     print(f"Average Precision (AUPRC): {ap:.4f}")
-    
 
-    # Also show classification report at a default threshold (0.5)
+    # Default threshold 0.5
     y_pred = (y_proba >= 0.5).astype(int)
     print("\nClassification Report @ 0.5:")
     print(classification_report(y_test, y_pred, digits=4))
 
-    # 8) Save best model
+    # 10) Save model
     os.makedirs(os.path.dirname(model_path), exist_ok=True)
-    joblib.dump(model, model_path)
-    print(f"✅ Model saved to {model_path} (best_iteration={model.get_booster().best_iteration})")
+    joblib.dump(booster, model_path)
+    print(f"✅ Booster saved to {model_path} (best_iteration={best_iter})")
+
+    return roc, ap
 
 
 if __name__ == "__main__":
