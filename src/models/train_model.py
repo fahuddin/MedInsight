@@ -11,7 +11,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
     roc_auc_score,
     average_precision_score,
-    classification_report,
+    classification_report,f1_score
 )
 
 # When running this file directly (e.g. `python train_model.py` from
@@ -74,16 +74,18 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     dval = xgb.DMatrix(X_val, label=y_val)
     dtest = xgb.DMatrix(X_test, label=y_test)
 
-    # 7) XGBoost params (old-version safe)
-    params = {
-        "objective": "binary:logistic",
-        "eval_metric": "logloss",
-        "eta": 0.05,             # learning_rate
-        "max_depth": 6,
-        "tree_method": "hist",   # if this errors on your version, change to "auto"
-        "scale_pos_weight": spw,
-        "seed": RANDOM_STATE,
-    }
+    
+    
+
+    params = { "objective": "binary:logistic", 
+              "eval_metric": "logloss", 
+              "eta": 0.1, # a bit faster learning 
+              "max_depth": 3, # simpler trees 
+              "subsample": 0.8, # use 80% of rows per tree 
+              "colsample_bytree": 0.8, # use 80% of features per tree 
+              "tree_method": "hist", 
+              "scale_pos_weight": spw, # you can keep this for now 
+              "seed": RANDOM_STATE, }
 
     evals = [(dtrain, "train"), (dval, "validation")]
 
@@ -97,8 +99,24 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
         verbose_eval=True,
     )
 
+
+
     best_iter = getattr(booster, "best_iteration", None)
     print("Best iteration:", best_iter)
+
+    y_val_proba = booster.predict(dval)
+
+    best_t = 0.5
+    best_f1 = -1
+
+    for t in [i/100 for i in range(5, 95, 5)]:
+        preds = (y_val_proba >= t).astype(int)
+        f1 = f1_score(y_val, preds)
+        if f1 > best_f1:
+            best_f1 = f1
+            best_t = t
+
+    print("Best threshold:", best_t, "Best F1:", best_f1)
 
     # 9) Evaluate on TEST
     y_proba = booster.predict(dtest)  # probabilities for class 1
@@ -110,9 +128,9 @@ def train_and_save_model(data_path: str, model_path: str = DEFAULT_MODEL_PATH):
     print(f"ROC-AUC: {roc:.4f}")
     print(f"Average Precision (AUPRC): {ap:.4f}")
 
-    # Default threshold 0.5
-    y_pred = (y_proba >= 0.5).astype(int)
-    print("\nClassification Report @ 0.5:")
+    # Use the best threshold from validation:
+    y_pred = (y_proba >= best_t).astype(int)
+    print(f"\nClassification Report @ threshold={best_t:.2f}:")
     print(classification_report(y_test, y_pred, digits=4))
 
     # 10) Save model
