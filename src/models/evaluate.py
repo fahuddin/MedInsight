@@ -5,7 +5,7 @@ import pandas as pd
 from sklearn.metrics import classification_report, confusion_matrix
 import seaborn as sns
 import matplotlib.pyplot as plt
-from features.feature_engineering import feature_engineering
+from src.features.feature_engineering import feature_engineering
 
 def evaluate(model_path: str, test_data_path: str):
     model = joblib.load(model_path)
